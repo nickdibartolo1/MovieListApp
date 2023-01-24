@@ -1,0 +1,11 @@
+.card{
+    width: 75%;
+    max-width: 60%;
+}
+
+.card-style{
+    background: linear-gradient(rgb(226, 75, 75), rgb(180, 9, 9));
+    margin: 5rem 10rem 5rem 10rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px black;
+}
