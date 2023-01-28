@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '../../UI/Card';
 import './List.css';
 import UserPick from '../UserPick/UserPick';
 
@@ -7,7 +6,7 @@ export default function List(props) {
     const space = ' - '
 
     return (
-        <Card>
+        <div>
             <div className='list'>
                 <ul>
                     {props.picks.map(pick => (
@@ -23,6 +22,6 @@ export default function List(props) {
                     ))}
                 </ul>
             </div>
-        </Card>
+        </div>
     )
 }

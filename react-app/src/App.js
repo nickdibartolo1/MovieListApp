@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "./Components/Form/Form";
 import List from "./Components/List/List";
 import Wrapper from "./UI/Wrapper";
@@ -6,7 +6,20 @@ import Wrapper from "./UI/Wrapper";
 
 function App() {
 
-  const [list, setList] = useState([])
+  // recieve localStorage
+  const keepLocalItems = () => {
+    let data = localStorage.getItem('MOVIE_LIST_APP_DATA')
+
+    if (data) {
+      return JSON.parse(localStorage.getItem('MOVIE_LIST_APP_DATA'));
+    } else {
+      return [];
+    }
+  }
+
+  // Beginning of code
+
+  const [list, setList] = useState(keepLocalItems());
 
   const addPickHandler = (nMovie, nUrgency) => {
     setList((prevList) => {
@@ -20,6 +33,12 @@ function App() {
       return cleanedList;
     });
   };
+
+  // set localStorage
+  useEffect(() => {
+    localStorage.setItem('MOVIE_LIST_APP_DATA', JSON.stringify(list))
+    console.log(list)
+  }, [list])
 
 
   return (

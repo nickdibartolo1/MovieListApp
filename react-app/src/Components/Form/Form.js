@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../UI/Button';
 import Card from '../../UI/Card';
-import './Form.css'
+import DropButton from '../../UI/DropButton';
 import Header from '../../UI/Header';
 
 export default function Form(props) {
@@ -36,10 +36,11 @@ export default function Form(props) {
 
     return (
         <Card>
+            <DropButton></DropButton>
             <Header></Header>
-            <div className='form' value={isValid}>
+            <div value={isValid}>
                 <form className="space-y-6" onSubmit={formSubmitHandler}>
-                    <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Movie</label>
+                    <label className='font-righteous block text-lg mb-2 font-medium text-gray-900 dark:text-white'>Movie</label>
                     <input
                         className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                         placeholder='Add a Movie'
@@ -47,7 +48,7 @@ export default function Form(props) {
                         onChange={movieInputHandler}
                         type="text"
                         value={movie}></input>
-                    <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>Urgence</label>
+                    <label className='font-righteous block text-lg mb-2 font-medium text-gray-900 dark:text-white'>Urgence</label>
                     <select
                         className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                         id="urgency"
