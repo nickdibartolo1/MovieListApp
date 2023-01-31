@@ -37,7 +37,7 @@ function App() {
   // set localStorage
   useEffect(() => {
     localStorage.setItem('MOVIE_LIST_APP_DATA', JSON.stringify(list))
-    console.log(list)
+    // console.log(list)
   }, [list])
 
 
