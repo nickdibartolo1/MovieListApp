@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Button from '../../UI/Button';
 // import axios from 'axios';
 
 export default function MovieApi(props) {
@@ -15,23 +16,51 @@ export default function MovieApi(props) {
         }
     };
 
-    fetch(`https://movie-database-alternative.p.rapidapi.com/?s=${movieSearchInput}&r=json`, options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-        // setMovieSearchInput('');
+    // fetch(`https://movie-database-alternative.p.rapidapi.com/?s=${movieSearchInput}&r=json`, options)
+    //     .then(response => response.json())
+    //     .then(response => console.log(response))
+    //     .catch(err => console.error(err));
+    //     // setMovieSearchInput('');
+
+    //     const ApiFormSubmitHandler = (event) => {
+    //         event.preventDefault();
+    //         setMovieSearchInput(event.target.value)
+    //         console.log(setMovieSearchInput)
+    //     }
+
+    useEffect(() => {
+        fetch(`https://movie-database-alternative.p.rapidapi.com/?s=${movieSearchInput}&r=json`, options)
+            .then(response => response.json())
+            .then(response => {
+                setMovieSearchInput(response.movieSearchInput)
+                console.log(setMovieSearchInput)
+            })
+            .catch(err => console.error(err));
+    }, [setMovieSearchInput])
+
+
+    const ApiFormSubmitHandler = (event) => {
+        event.preventDefault();
+        setMovieSearchInput(event.target.value)
+        console.log(setMovieSearchInput)
+    }
+
+
+
+
 
 
     return (
         <div>
-            <form>
+            <form onSubmit={ApiFormSubmitHandler} >
                 <input
                     value={movieSearchInput}
-                    onChange={(event) => setMovieSearchInput(event.target.value)}
+                    // onChange={(event) => setMovieSearchInput(event.target.value)}
                     placeholder='Search for Movies'
                     type='text'
                 >
                 </input>
+                <Button type='submit'>Search</Button>
             </form>
         </div>
     )
