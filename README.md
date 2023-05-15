@@ -12,11 +12,15 @@ SO THAT I can keep track of the different movie options I have been considering.
   - [User Story](#user-story)
   - [Table of Contents](#table-of-contents)
   - [Applications Used](#applications-used)
+  - [Future Development](#future-development)
   - [Video](#Video)
   - [Contributing](#contributing)
 ## Applications Used
 React, React DOM, Tailwind, Node 
 ## Video
 
+## Future Development
+Future development for this application would include a search bar providing the ability to browse for movies and add them to your list on a click. For this to come to fruition, an api must be integrated 
+as well as some javascript features. This would allow for a better user experience as it would limit the amount of typing needed for the user.
 ## Contributing
 Nick DiBartolo
